@@ -1,0 +1,13 @@
+/* Lithuanian letters */
+
+ZMK_UNICODE_PAIR(lt_a_ogonek, 0, 1, 0, 5, 0, 1, 0, 4) // ą / Ą
+ZMK_UNICODE_PAIR(lt_c_caron,  0, 1, 0, D, 0, 1, 0, C) // č / Č
+ZMK_UNICODE_PAIR(lt_e_ogonek, 0, 1, 1, 9, 0, 1, 1, 8) // ę / Ę
+ZMK_UNICODE_PAIR(lt_e_dot,    0, 1, 1, 7, 0, 1, 1, 6) // ė / Ė
+ZMK_UNICODE_PAIR(lt_i_ogonek, 0, 1, 2, F, 0, 1, 2, E) // į / Į
+ZMK_UNICODE_PAIR(lt_s_caron,  0, 1, 6, 1, 0, 1, 6, 0) // š / Š
+ZMK_UNICODE_PAIR(lt_u_ogonek, 0, 1, 7, 3, 0, 1, 7, 2) // ų / Ų
+ZMK_UNICODE_PAIR(lt_u_macron, 0, 1, 6, B, 0, 1, 6, A) // ū / Ū
+ZMK_UNICODE_PAIR(lt_z_caron,  0, 1, 7, E, 0, 1, 7, D) // ž / Ž
+ZMK_UNICODE_PAIR(endash,      2, 0, 1, 3, 2, 0, 1, 3) // – / –
+ZMK_UNICODE_PAIR(lt_quote,    2, 0, 1, E, 2, 0, 1, D) // „ / ”

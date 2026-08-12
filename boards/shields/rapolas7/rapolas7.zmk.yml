@@ -1,0 +1,11 @@
+file_format: "1"
+id: rapolas7
+name: rapolas7
+type: shield
+url: https://github.com/rapolastrazdas/kb
+requires: [nice_nano_v2]
+features:
+  - keys
+siblings:
+  - rapolas7_left
+  - rapolas7_right
