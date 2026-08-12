@@ -65,7 +65,7 @@
             bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_quote>, <&macro_release &kp LSHIFT>;
         };
     };
-}
+};
 / {
     behaviors {
         hm_a: homerow_mod_a {
