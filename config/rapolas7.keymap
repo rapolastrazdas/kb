@@ -12,109 +12,115 @@
 #define NUM_LAYER 2
 #define MOU_LAYER 3
 
-/* depreciated43
-ZMK_UNICODE_PAIR(lt_a_ogonek, 0, 1, 0, 5, 0, 1, 0, 4) // ą / Ą
-ZMK_UNICODE_PAIR(lt_c_caron,  0, 1, 0, D, 0, 1, 0, C) // č / Č
-ZMK_UNICODE_PAIR(lt_e_ogonek, 0, 1, 1, 9, 0, 1, 1, 8) // ę / Ę
-ZMK_UNICODE_PAIR(lt_e_dot,    0, 1, 1, 7, 0, 1, 1, 6) // ė / Ė
-ZMK_UNICODE_PAIR(lt_i_ogonek, 0, 1, 2, F, 0, 1, 2, E) // į / Į
-ZMK_UNICODE_PAIR(lt_s_caron,  0, 1, 6, 1, 0, 1, 6, 0) // š / Š
-ZMK_UNICODE_PAIR(lt_u_ogonek, 0, 1, 7, 3, 0, 1, 7, 2) // ų / Ų
-ZMK_UNICODE_PAIR(lt_u_macron, 0, 1, 6, B, 0, 1, 6, A) // ū / Ū
-ZMK_UNICODE_PAIR(lt_z_caron,  0, 1, 7, E, 0, 1, 7, D) // ž / Ž
-ZMK_UNICODE_PAIR(endash,      2, 0, 1, 3, 2, 0, 1, 3) // – / –
-ZMK_UNICODE_PAIR(lt_quote,    2, 0, 1, E, 2, 0, 1, D) // „ / ”
-*/
 / {
+    macros {
+        mc_td_a: mc_td_a { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_a>; };
+        mc_td_s: mc_td_s { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_s>; };
+        mc_td_d: mc_td_d { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_d>; };
+        mc_td_f: mc_td_f { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_f>; };
+        mc_td_j: mc_td_j { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_j>; };
+        mc_td_k: mc_td_k { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_k>; };
+        mc_td_l: mc_td_l { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_l>; };
+        mc_td_colon: mc_td_colon { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_colon>; };
+    };
+
     behaviors {
         hm_a: homerow_mod_a {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <150>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            bindings = <&kp>, <&td_a>;
+            bindings = <&kp>, <&mc_td_a>;
             hold-trigger-key-positions = <KEYS_R>;
             hold-trigger-on-release;
         };
+
         hm_s: homerow_mod_s {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&td_s>;
+            bindings = <&kp>, <&mc_td_s>;
             hold-trigger-key-positions = <KEYS_R>;
             hold-trigger-on-release;
         };
+
         hm_d: homerow_mod_d {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            bindings = <&kp>, <&td_d>;
+            bindings = <&kp>, <&mc_td_d>;
             require-prior-idle-ms = <150>;
             hold-trigger-key-positions = <KEYS_R>;
             hold-trigger-on-release;
         };
+
         hm_f: homerow_mod_f {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&td_f>;
+            bindings = <&kp>, <&mc_td_f>;
             hold-trigger-key-positions = <KEYS_R>;
             hold-trigger-on-release;
         };
+
         hm_j: homerow_mod_j {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&td_j>;
+            bindings = <&kp>, <&mc_td_j>;
             hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
+
         hm_k: homerow_mod_k {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&td_k>;
+            bindings = <&kp>, <&mc_td_k>;
             hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
+
         hm_l: homerow_mod_l {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&td_l>;
+            bindings = <&kp>, <&mc_td_l>;
             hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
+
         hm_c: homerow_mod_colon {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&td_colon>;
+            bindings = <&kp>, <&mc_td_colon>;
             hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
+
         thumb_ht: thumb_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -123,6 +129,7 @@ ZMK_UNICODE_PAIR(lt_quote,    2, 0, 1, E, 2, 0, 1, D) // „ / ”
             quick-tap-ms = <150>;
             bindings = <&mo>, <&kp>;
         };
+
         thumb_mt: thumb_mod_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -168,41 +175,41 @@ ZMK_UNICODE_PAIR(lt_quote,    2, 0, 1, E, 2, 0, 1, D) // „ / ”
         td_n: td_n { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp N>, <&kp LS(N)>; };
         td_m: td_m { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp M>, <&kp LS(M)>; };
 
-        td_dash: td_under_hyphen_endash { 
-            compatible = "zmk,behavior-tap-dance"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <200>; 
-            bindings = <&kp UNDER>, <&kp MINUS>, <&uc 0x2013 0>; 
+        td_dash: td_under_hyphen_endash {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp UNDER>, <&kp MINUS>, <&uc 0x2013 0>;
         };
-        td_quote: td_startquote_endquote_apostrophe { 
-            compatible = "zmk,behavior-tap-dance"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <200>; 
-            bindings = <&uc 0x201E 0>, <&uc 0x201D 0>, <&kp AMPERSAND>; 
+        td_quote: td_startquote_endquote_apostrophe {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&uc 0x201E 0>, <&uc 0x201D 0>, <&kp AMPERSAND>;
         };
-        td_comma: td_comma_dot { 
-            compatible = "zmk,behavior-tap-dance"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <200>; 
-            bindings = <&kp COMMA>, <&kp DOT>; 
+        td_comma: td_comma_dot {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COMMA>, <&kp DOT>;
         };
-        td_excl: td_excl_qmark { 
-            compatible = "zmk,behavior-tap-dance"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <200>; 
-            bindings = <&kp EXCL>, <&kp QMARK>; 
+        td_excl: td_excl_qmark {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp EXCL>, <&kp QMARK>;
         };
-        td_colon: td_colon_semicolon { 
-            compatible = "zmk,behavior-tap-dance"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <200>; 
-            bindings = <&kp COLON>, <&kp SEMI>; 
+        td_colon: td_colon_semicolon {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COLON>, <&kp SEMI>;
         };
-        td_paren: td_openparen_closedparen { 
-            compatible = "zmk,behavior-tap-dance"; 
-            #binding-cells = <0>; 
-            tapping-term-ms = <200>; 
-            bindings = <&kp LPAR>, <&kp RPAR>; 
+        td_paren: td_openparen_closedparen {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
         };
 
         mmv { time-to-max-speed-ms = <300>; };
@@ -220,33 +227,33 @@ ZMK_UNICODE_PAIR(lt_quote,    2, 0, 1, E, 2, 0, 1, D) // „ / ”
 
         default_layer {
             bindings = <
-            &kp ESCAPE  &td_ao     &td_cc     &td_eo      &td_ed      &td_io    &td_sc   &td_uo        &td_um        &td_zc       &td_paren     &kp ASTERISK
-            &kp TAB     &td_q      &td_w      &td_e       &td_r       &td_t     &td_y    &td_u         &td_i         &td_o        &td_p         &none
-            &kp LSHIFT  &hm_a LWIN &hm_s LALT &hm_d LCTRL &hm_f LSHFT &td_g     &td_h    &hm_j RSHFT   &hm_k RCTRL   &hm_l RALT   &hm_c RWIN    &td_quote
-            &kp LCTRL   &td_z      &td_x      &td_c       &td_v       &td_b     &td_n    &td_m         &td_comma     &td_excl     &td_dash      &kp SLASH
+            &kp ESCAPE  &td_ao        &td_cc        &td_eo        &td_ed        &td_io    &td_sc   &td_uo        &td_um        &td_zc       &td_paren     &kp ASTERISK
+            &kp TAB     &td_q         &td_w         &td_e         &td_r         &td_t     &td_y    &td_u         &td_i         &td_o        &td_p         &none
+            &kp LSHIFT  &hm_a LWIN 0  &hm_s LALT 0  &hm_d LCTRL 0 &hm_f LSHFT 0 &td_g     &td_h    &hm_j RSHFT 0 &hm_k RCTRL 0 &hm_l RALT 0 &hm_c RWIN 0  &td_quote
+            &kp LCTRL   &td_z         &td_x         &td_c         &td_v         &td_b     &td_n    &td_m         &td_comma     &td_excl     &td_dash      &kp SLASH
             &kp SPACE     &mo NUM_LAYER   &none         &kp ENTER
             &mo MOU_LAYER &mo SYM_LAYER   &kp BACKSPACE &kp DELETE
             >;
         };
 
-        symbol_layer { 
-            bindings = < 
+        symbol_layer {
+            bindings = <
             &none &none &none &none &none &none    &kp GRAVE       &kp LS(GRAVE)   &kp LS(N2)      &kp LS(N3)      &kp LS(N4)   &kp BSLH
             &none &none &none &none &none &none    &kp SQT         &kp LT          &kp GT          &kp LPAR        &kp RPAR     &kp LS(SQT)
             &none &none &none &none &none &none    &kp LS(SEMI)    &kp LBKT        &kp RBKT        &kp LBRC        &kp RBRC     &kp SEMI
             &none &none &none &none &none &none    &kp LS(SLASH)   &kp LS(N1)      &kp LS(N7)      &kp PIPE        &kp LS(N6)   &kp LS(N5)
-            &trans &trans &trans &trans       
+            &trans &trans &trans &trans
             &trans &trans &trans &trans
             >;
         };
 
-        number_layer { 
-            bindings = < 
+        number_layer {
+            bindings = <
             &none &none &none &none &none &none    &none      &none       &kp KP_DIVIDE   &kp KP_MULTIPLY &kp KP_SUBTRACT &none
             &none &none &none &none &none &none    &none      &kp KP_N7   &kp KP_N8       &kp KP_N9       &kp KP_PLUS     &none
             &none &none &none &none &none &none    &none      &kp KP_N4   &kp KP_N5       &kp KP_N6       &kp KP_EQUAL    &none
             &none &none &none &none &none &none    &kp KP_N0  &kp KP_N1   &kp KP_N2       &kp KP_N3       &kp KP_DOT      &kp KP_ENTER
-            &trans &trans &trans &trans       
+            &trans &trans &trans &trans
             &trans &trans &trans &trans
             >;
         };
