@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 #include "zmk-helpers/helper.h"
+#include <behaviors/unicode.dtsi>
 
 #define KEYS_L 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 68 69 80 81
 #define KEYS_R 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 69 70 82 83
@@ -262,6 +263,11 @@ ZMK_UNICODE_PAIR(lt_quote,    2, 0, 1, E, 2, 0, 1, D) // „ / ”
         msc { time-to-max-speed-ms = <300>; };
     };
 };
+
+&uc {
+    default-mode = <UC_MODE_WIN_COMPOSE>;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
