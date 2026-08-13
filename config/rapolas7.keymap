@@ -26,60 +26,6 @@ ZMK_UNICODE_PAIR(endash,      2, 0, 1, 3, 2, 0, 1, 3) // – / –
 ZMK_UNICODE_PAIR(lt_quote,    2, 0, 1, E, 2, 0, 1, D) // „ / ”
 */
 / {
-    macros {
-        lt_A_ogonek: lt_A_ogonek {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_a_ogonek>, <&macro_release &kp LSHIFT>;
-        };
-        lt_C_caron: lt_C_caron {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_c_caron>, <&macro_release &kp LSHIFT>;
-        };
-        lt_E_ogonek: lt_E_ogonek {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_e_ogonek>, <&macro_release &kp LSHIFT>;
-        };
-        lt_E_dot: lt_E_dot {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_e_dot>, <&macro_release &kp LSHIFT>;
-        };
-        lt_I_ogonek: lt_I_ogonek {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_i_ogonek>, <&macro_release &kp LSHIFT>;
-        };
-        lt_S_caron: lt_S_caron {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_s_caron>, <&macro_release &kp LSHIFT>;
-        };
-        lt_U_ogonek: lt_U_ogonek {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_u_ogonek>, <&macro_release &kp LSHIFT>;
-        };
-        lt_U_macron: lt_U_macron {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_u_macron>, <&macro_release &kp LSHIFT>;
-        };
-        lt_Z_caron: lt_Z_caron {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_z_caron>, <&macro_release &kp LSHIFT>;
-        };
-        lt_endquote: lt_endquote {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>, <&macro_tap &lt_quote>, <&macro_release &kp LSHIFT>;
-        };
-    };
-};
-/ {
     behaviors {
         hm_a: homerow_mod_a {
             compatible = "zmk,behavior-hold-tap";
