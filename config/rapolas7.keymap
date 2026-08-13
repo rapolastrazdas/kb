@@ -13,18 +13,22 @@
 #define MOU_LAYER 3
 
 / {
-    macros {
-        mc_td_a: mc_td_a { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_a>; };
-        mc_td_s: mc_td_s { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_s>; };
-        mc_td_d: mc_td_d { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_d>; };
-        mc_td_f: mc_td_f { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_f>; };
-        mc_td_j: mc_td_j { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_j>; };
-        mc_td_k: mc_td_k { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_k>; };
-        mc_td_l: mc_td_l { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_l>; };
-        mc_td_colon: mc_td_colon { compatible = "zmk,behavior-macro"; #binding-cells = <1>; bindings = <&td_colon>; };
-    };
-
     behaviors {
+        /* -----------------------------------------------------------------
+         * Mod-Morphs for Homerow Alpha Keys (Tap = Lowercase, Shift+Tap = Uppercase)
+         * ----------------------------------------------------------------- */
+        mm_a: mm_a { compatible = "zmk,behavior-mod-morph"; #binding-cells = <1>; bindings = <&kp A>, <&kp LS(A)>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_s: mm_s { compatible = "zmk,behavior-mod-morph"; #binding-cells = <1>; bindings = <&kp S>, <&kp LS(S)>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_d: mm_d { compatible = "zmk,behavior-mod-morph"; #binding-cells = <1>; bindings = <&kp D>, <&kp LS(D)>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_f: mm_f { compatible = "zmk,behavior-mod-morph"; #binding-cells = <1>; bindings = <&kp F>, <&kp LS(F)>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_j: mm_j { compatible = "zmk,behavior-mod-morph"; #binding-cells = <1>; bindings = <&kp J>, <&kp LS(J)>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_k: mm_k { compatible = "zmk,behavior-mod-morph"; #binding-cells = <1>; bindings = <&kp K>, <&kp LS(K)>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_l: mm_l { compatible = "zmk,behavior-mod-morph"; #binding-cells = <1>; bindings = <&kp L>, <&kp LS(L)>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_c: mm_c { compatible = "zmk,behavior-mod-morph"; #binding-cells = <1>; bindings = <&kp LS(SEMI)>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+
+        /* -----------------------------------------------------------------
+         * Homerow Mod Hold-Taps paired with Mod-Morphs
+         * ----------------------------------------------------------------- */
         hm_a: homerow_mod_a {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -32,7 +36,7 @@
             require-prior-idle-ms = <150>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            bindings = <&kp>, <&mc_td_a>;
+            bindings = <&kp>, <&mm_a>;
             hold-trigger-key-positions = <KEYS_R>;
             hold-trigger-on-release;
         };
@@ -44,7 +48,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&mc_td_s>;
+            bindings = <&kp>, <&mm_s>;
             hold-trigger-key-positions = <KEYS_R>;
             hold-trigger-on-release;
         };
@@ -55,8 +59,8 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            bindings = <&kp>, <&mc_td_d>;
             require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&mm_d>;
             hold-trigger-key-positions = <KEYS_R>;
             hold-trigger-on-release;
         };
@@ -68,7 +72,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&mc_td_f>;
+            bindings = <&kp>, <&mm_f>;
             hold-trigger-key-positions = <KEYS_R>;
             hold-trigger-on-release;
         };
@@ -80,7 +84,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&mc_td_j>;
+            bindings = <&kp>, <&mm_j>;
             hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
@@ -92,7 +96,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&mc_td_k>;
+            bindings = <&kp>, <&mm_k>;
             hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
@@ -104,7 +108,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&mc_td_l>;
+            bindings = <&kp>, <&mm_l>;
             hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
@@ -116,7 +120,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&mc_td_colon>;
+            bindings = <&kp>, <&mm_c>;
             hold-trigger-key-positions = <KEYS_L>;
             hold-trigger-on-release;
         };
@@ -139,6 +143,7 @@
             bindings = <&kp>, <&kp>;
         };
 
+        /* Non-homerow Tap Dances (0-cell bindings safe on standard keys) */
         td_ao: td_ao { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&uc 0x0105 0>, <&uc 0x0104 0>; };
         td_cc: td_cc { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&uc 0x010D 0>, <&uc 0x010C 0>; };
         td_eo: td_eo { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&uc 0x0119 0>, <&uc 0x0118 0>; };
@@ -148,6 +153,7 @@
         td_uo: td_uo { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&uc 0x0173 0>, <&uc 0x0172 0>; };
         td_um: td_um { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&uc 0x016B 0>, <&uc 0x016A 0>; };
         td_zc: td_zc { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&uc 0x017E 0>, <&uc 0x017D 0>; };
+
         td_q: td_q { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp Q>, <&kp LS(Q)>; };
         td_w: td_w { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp W>, <&kp LS(W)>; };
         td_e: td_e { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp E>, <&kp LS(E)>; };
@@ -160,13 +166,6 @@
         td_p: td_p { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp P>, <&kp LS(P)>; };
         td_g: td_g { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp G>, <&kp LS(G)>; };
         td_h: td_h { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp H>, <&kp LS(H)>; };
-        td_a: td_a { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp A>, <&kp LS(A)>; };
-        td_s: td_s { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp S>, <&kp LS(S)>; };
-        td_d: td_d { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp D>, <&kp LS(D)>; };
-        td_f: td_f { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp F>, <&kp LS(F)>; };
-        td_j: td_j { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp J>, <&kp LS(J)>; };
-        td_k: td_k { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp K>, <&kp LS(K)>; };
-        td_l: td_l { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp L>, <&kp LS(L)>; };
         td_z: td_z { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp Z>, <&kp LS(Z)>; };
         td_x: td_x { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp X>, <&kp LS(X)>; };
         td_c: td_c { compatible = "zmk,behavior-tap-dance"; #binding-cells = <0>; tapping-term-ms = <200>; bindings = <&kp C>, <&kp LS(C)>; };
@@ -227,12 +226,12 @@
 
         default_layer {
             bindings = <
-            &kp ESCAPE  &td_ao        &td_cc        &td_eo        &td_ed        &td_io    &td_sc   &td_uo        &td_um        &td_zc       &td_paren     &kp ASTERISK
-            &kp TAB     &td_q         &td_w         &td_e         &td_r         &td_t     &td_y    &td_u         &td_i         &td_o        &td_p         &none
-            &kp LSHIFT  &hm_a LWIN 0  &hm_s LALT 0  &hm_d LCTRL 0 &hm_f LSHFT 0 &td_g     &td_h    &hm_j RSHFT 0 &hm_k RCTRL 0 &hm_l RALT 0 &hm_c RWIN 0  &td_quote
-            &kp LCTRL   &td_z         &td_x         &td_c         &td_v         &td_b     &td_n    &td_m         &td_comma     &td_excl     &td_dash      &kp SLASH
-            &kp SPACE     &mo NUM_LAYER   &none         &kp ENTER
-            &mo MOU_LAYER &mo SYM_LAYER   &kp BACKSPACE &kp DELETE
+            &kp ESCAPE  &td_ao            &td_cc            &td_eo            &td_ed            &td_io    &td_sc   &td_uo            &td_um            &td_zc           &td_paren         &kp ASTERISK
+            &kp TAB     &td_q             &td_w             &td_e             &td_r             &td_t     &td_y    &td_u             &td_i             &td_o            &td_p             &none
+            &kp LSHIFT  &hm_a LWIN 0      &hm_s LALT 0      &hm_d LCTRL 0     &hm_f LSHFT 0     &td_g     &td_h    &hm_j RSHFT 0     &hm_k RCTRL 0     &hm_l RALT 0     &hm_c RWIN 0      &td_quote
+            &kp LCTRL   &td_z             &td_x             &td_c             &td_v             &td_b     &td_n    &td_m             &td_comma         &td_excl         &td_dash          &kp SLASH
+            &kp SPACE     &mo NUM_LAYER   &none             &kp ENTER
+            &mo MOU_LAYER &mo SYM_LAYER   &kp BACKSPACE     &kp DELETE
             >;
         };
 
